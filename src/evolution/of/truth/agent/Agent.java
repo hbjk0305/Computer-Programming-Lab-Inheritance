@@ -15,5 +15,5 @@ abstract public class Agent {
         score = newScore;
     }
 
-    abstract public int choice();
+    abstract public int choice(int previousOpponentChoice);
 }

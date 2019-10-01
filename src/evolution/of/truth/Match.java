@@ -5,6 +5,7 @@ import evolution.of.truth.agent.Agent;
 public class Match {
     public static int CHEAT = 0;
     public static int COOPERATE = 1;
+    public static int UNDEFINED = -1;
 
     private static int ruleMatrix[][][] = {
             {
@@ -17,10 +18,22 @@ public class Match {
             }
     };
 
-    public static void playGame(Agent agentA, Agent agentB) {
-        int choiceA = agentA.choice();
-        int choiceB = agentB.choice();
+    Agent agentA, agentB;
+    int previousChoiceA, previousChoiceB;
+
+    public Match(Agent agentA, Agent agentB) {
+        this.agentA = agentA;
+        this.agentB = agentB;
+        previousChoiceA = UNDEFINED;
+        previousChoiceB = UNDEFINED;
+    }
+
+    public void playGame() {
+        int choiceA = agentA.choice(previousChoiceB);
+        int choiceB = agentB.choice(previousChoiceA);
         agentA.setScore(agentA.getScore() + ruleMatrix[choiceA][choiceB][0]);
         agentB.setScore(agentB.getScore() + ruleMatrix[choiceA][choiceB][1]);
+        previousChoiceA = choiceA;
+        previousChoiceB = choiceB;
     }
 }

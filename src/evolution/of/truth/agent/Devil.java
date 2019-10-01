@@ -4,7 +4,7 @@ import evolution.of.truth.Match;
 
 public class Devil extends Agent {
     @Override
-    public int choice() {
+    public int choice(int previousOpponentChoice) {
         return Match.CHEAT;
     }
 }
