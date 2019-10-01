@@ -9,9 +9,6 @@ abstract public class Individual {
         id = idCount++;
     }
 
-    protected int sortKey() {
-        return 0;
-    }
-
-    abstract protected Individual clone();
+    abstract public int sortKey();
+    abstract public Individual clone();
 }
