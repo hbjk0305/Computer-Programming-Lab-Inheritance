@@ -1,12 +1,18 @@
 package evolution.of.truth.agent;
 
-abstract public class Agent {
+import kiroong.Individual;
+
+abstract public class Agent extends Individual {
     private int score;
     private String name;
 
     protected Agent(String name) {
         score = 0;
         this.name = name;
+    }
+
+    public int sortKey() {
+        return getScore();
     }
 
     @Override
