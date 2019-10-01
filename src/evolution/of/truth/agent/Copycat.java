@@ -1,6 +1,6 @@
 package evolution.of.truth.agent;
 
-import evolution.of.truth.Match;
+import evolution.of.truth.match.Match;
 
 public class Copycat extends Agent {
     public Copycat() {

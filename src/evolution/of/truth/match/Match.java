@@ -1,4 +1,4 @@
-package evolution.of.truth;
+package evolution.of.truth.match;
 
 import evolution.of.truth.agent.Agent;
 
@@ -37,3 +37,4 @@ public class Match {
         previousChoiceB = choiceB;
     }
 }
+
