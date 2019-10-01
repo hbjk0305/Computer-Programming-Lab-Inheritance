@@ -2,9 +2,16 @@ package evolution.of.truth.agent;
 
 abstract public class Agent {
     private int score;
+    private String name;
 
-    public Agent() {
+    protected Agent(String name) {
         score = 0;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name + ": " + getScore();
     }
 
     public int getScore() {
