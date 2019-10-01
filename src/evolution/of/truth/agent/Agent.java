@@ -1,6 +1,6 @@
-package evolution.of.truth;
+package evolution.of.truth.agent;
 
-public class Agent {
+abstract public class Agent {
     private int score;
 
     public Agent() {
@@ -15,7 +15,5 @@ public class Agent {
         score = newScore;
     }
 
-    public int choice() {
-        return Match.COOPERATE;
-    }
+    abstract public int choice();
 }
